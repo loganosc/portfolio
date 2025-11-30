@@ -20,6 +20,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./portfolio/        # <-- FIXED (must end in /)
+          local-dir: ./              # <-- correct (your repo root)
           server-dir: ${{ secrets.FTP_DIR }}/
           dangerous-clean-slate: true
