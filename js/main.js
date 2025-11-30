@@ -27,6 +27,7 @@
             window.scrollTo(0, 0);
         }
     })
+    //
     .add({
         targets: '#preloader',
         opacity: 0,
@@ -277,38 +278,52 @@
 
     }; // end ssSwiper
     
-    const ssLightbox = function () {
-        const folioLinks = document.querySelectorAll('.folio-list__item-link');
-    
-        folioLinks.forEach(function (link) {
-            link.addEventListener("click", function (event) {
-                event.preventDefault();
-    
-                const title = link.getAttribute("data-title");
-                const category = link.getAttribute("data-category");
-                const imgSrc = link.getAttribute("data-img");
-    
-                const modalHTML = `
-                    <div class="modal-content">
-                        <img src="${imgSrc}" alt="${title}" style="max-width:100%; border-radius: 6px; margin-bottom: 15px;">
-                        <h2>${title}</h2>
-                        <p style="color: #777;">${category}</p>
-                    </div>
-                `;
-    
-                const instance = basicLightbox.create(modalHTML, {
-                    onShow: function (instance) {
-                        document.addEventListener("keydown", function (event) {
-                            if (event.key === "Escape") instance.close();
-                        });
-                    }
-                });
-    
-                instance.show();
+  const ssLightbox = function () {
+    const folioLinks = document.querySelectorAll('.folio-list__item-link');
+
+    folioLinks.forEach(function (link) {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const title = link.getAttribute("data-title");
+            const category = link.getAttribute("data-category");
+            const imgSrc = link.getAttribute("data-img");
+            const behanceLink = link.getAttribute("data-behance");
+
+            const behanceButtonHTML = behanceLink
+                ? `
+                    <a class="modal-behance-btn"
+                       href="${behanceLink}"
+                       target="_blank"
+                       rel="noopener">
+                       View full project on Behance
+                    </a>
+                  `
+                : "";
+
+            const modalHTML = `
+                <div class="modal-content">
+                    <img src="${imgSrc}" alt="${title}"
+                         style="max-width:100%; border-radius: 6px; margin-bottom: 15px;">
+                    <h2>${title}</h2>
+                    <p style="color: #777;">${category}</p>
+                    ${behanceButtonHTML}
+                </div>
+            `;
+
+            const instance = basicLightbox.create(modalHTML, {
+                onShow: function (instance) {
+                    document.addEventListener("keydown", function (event) {
+                        if (event.key === "Escape") instance.close();
+                    });
+                }
             });
+
+            instance.show();
         });
-    };
-    
+    });
+};
+
     
    /* Alert boxes
     * ------------------------------------------------------ */
@@ -376,6 +391,22 @@
 
     }; // end ssMoveTo
 
+    // Add Behance button functionality inside popup
+    document.querySelectorAll('.folio-list__item-link').forEach(item => {
+        item.addEventListener('click', function () {
+
+            const behanceLink = this.getAttribute('data-behance');
+            const behanceBtn = document.getElementById('behance-btn');
+
+            if (behanceLink && behanceBtn) {
+                behanceBtn.href = behanceLink;
+                behanceBtn.style.display = 'inline-block';
+            } else if (behanceBtn) {
+                behanceBtn.style.display = 'none';
+            }
+        });
+    });
+
 
    /* Initialize
     * ------------------------------------------------------ */
@@ -392,4 +423,14 @@
 
     })();
     
+    // Cursor reactive hero gradient
+    window.addEventListener("mousemove", function (event) {
+    const x = (event.clientX / window.innerWidth) * 100;
+    const y = (event.clientY / window.innerHeight) * 100;
+
+    document.documentElement.style.setProperty("--mx", x + "%");
+    document.documentElement.style.setProperty("--my", y + "%");
+    });
+
 })(document.documentElement);
+
