@@ -192,6 +192,14 @@ a:hover, a:focus {
 .block-lg-whole > .column { flex: none; width: 100%; }
 */
 /* Header and Navigation */
+#intro {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 .s-header {
   z-index: 100;
   width: 100%;
