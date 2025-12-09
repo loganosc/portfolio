@@ -1,274 +1,212 @@
 <!DOCTYPE html>
-<html class="no-js ss-preload" lang="en">
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <title>Logan Oscher · Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <title>Logan Oscher Creates</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- mobile specific metas
-    ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon_io/site.webmanifest">
-
-    <link rel="stylesheet" href="https://unpkg.com/basiclightbox@5.0.4/dist/basicLightbox.min.css">
-    <script src="https://unpkg.com/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
-
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body id="top">
+<body>
 
-    <!-- # preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader">
-        </div>
+<div class="page-shell">
+
+  <!-- background gradient -->
+  <div class="page-gradient"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__brand">
+        <a href="#top" class="brand-link">Logan Oscher</a>
+      </div>
+
+      <nav class="site-header__nav">
+        <a href="#work">Featured</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- # page wrap
-    ================================================== -->
-    <div class="s-pagewrap">
-        <!-- ## site header 
-        ================================================== -->
-        <header class="s-header">
-            <div class="header-mobile">
-                <span class="mobile-home-link"><a href="index.html">Logan Oscher</a></span>
-                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+  <!-- MAIN -->
+  <main id="top" class="page-main">
+
+    <!-- INTRO / HERO -->
+    <section class="hero-panel reveal-on-scroll">
+      <div class="page-section-inner hero-grid">
+        <h1 class="hero-heading">
+          I'm Logan, a UNC Computer Science + Media AD/PR Major interested in 
+          <em>web design</em>, <em>graphic design</em>, & <em>software engineering</em>.
+        </h1>
+      </div>
+    </section>
+
+    <!-- FEATURED WORK -->
+    <section id="work" class="projects-section reveal-on-scroll">
+      <div class="page-section-inner">
+        <div class="projects-header">
+          <div class="projects-header-left">
+            <p class="section-title">Featured work</p>
+            <h2 class="projects-heading">Selected Projects</h2>
+          </div>
+        </div>
+
+        <!-- Project: Vanguard Onboarding -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Product Design · UX Research</p>
+            <h3 class="project__title">Vanguard Investor Onboarding</h3>
+            <p class="project__meta">Responsive onboarding redesign focused on clarity, confidence, and faster first investment for new Vanguard customers.</p>
+            <p class="project__summary">
+              Streamlined copy, simplified account setup, and clearer guardrails that guide first-time investors from intent to funded account with fewer drop-offs—grounded in interviews, journey mapping, and rapid prototyping.
+            </p>
+
+            <div class="project__actions">
+              <a class="btn project__more" href="vanguard-case-study.html">
+                View case study
+              </a>
             </div>
+          </div>
 
-            <div class="main-nav-wrap">
-                <nav class="main-nav">
-                    <ul>
-                        <!--<div class="logo">
-                            <img src="images/logo.png"
-                                class="logo">
-                        </div> -->
-                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
-                        <li><a href="#about" class="smoothscroll">About</a></li>
-                        <li><a href="#works" class="smoothscroll">Work</a></li>
-                    </ul>
-                </nav>
+          <figure class="project__media">
+            <img src="assets/portfolio/vanguard.png" alt="Vanguard-inspired onboarding screens">
+          </figure>
+        </article>
+
+        <!-- Project 1 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Digital Package · Reporting & Design</p>
+            <h3 class="project__title">Processing Fees & the Small Business Squeeze</h3>
+            <p class="project__meta">WordPress feature package combining reporting, video, and infographic design to explain rising card-processing fees.</p>
+            <p class="project__summary">
+              A long-form digital story that pairs interviews, data visualizations, and a video explainer to show how transaction fees chip away at independent retailers’ margins and how clearer communication can help.
+            </p>
+
+            <div class="project__actions">
+              <a class="btn project__more" href="digital-processing-fees-case-study.html">
+                View case study
+              </a>
             </div>
-        </header> <!-- end s-header -->
+          </div>
 
-        <!-- ## main content ==================================================- -->
-        <main class="s-content">
-            <!-- ### intro ================================================== -->
-            <section id="intro" class="s-intro target-section">
-                <div class="intro-content">
-                    <div class="text-pretitle">
-                        Welcome
-                    </div>
-                    <h1 class="text-huge-title">
-                        I’m Logan, a UNC Computer Science + Media AD/PR Major interested in web design, graphic design, and software engineering. <br>
-                    </h1>
-                </div> <!-- end intro content -->
-            </section> <!-- end s-intro -->
-
-            <!-- ### about ================================================== -->
-            <section id="about" class="s-about target-section">
-                <div class="about-grid">
-                    <div class="about-info__pic-block">
-                        <img src="images/about-photo.png"
-                                alt="About Me Photo"
-                            class="about-info__pic">
-                    </div>
-                    <div class="about-info__text-wrapper">
-                        <div class="about-info__text">
-                            <h2 class="text-pretitle">
-                                About
-                            </h2>
-                            <p class="attention-getter">
-                                I've always been drawn to the intersection of design, technology, and user experience. As a third-year undergraduate student at UNC Chapel Hill pursuing a double major in Computer Science and Media &amp; Journalism, I am focused on UI/UX design, web design, and interactive media. My passion for UI/UX, graphic design, and web design drives me to create content that is both visually appealing and user-centric. From 3D printing and laser cutting to building user-friendly web interfaces, I am constantly seeking ways to enhance the way people interact with technology.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ### classes ==================================================
-            <section id="classes" class="s-classes target-section">
-                <div class="row classes-content">
-                    <div class="column lg-12" data-animate-block>
-                        <h2 class="text-pretitle" data-animate-el>
-                            Classes
-                        </h2>
-                        <p class="h1" data-animate-el>
-                            Relevant UNC Courses
-                        </p>
-                        <ul>
-                            <li>COMP 426: Web Development</li>
-                            <li>COMP 401: Foundations of Programming</li>
-                            <li>COMP 211: Data Structures and Algorithms</li>
-                            <li>COMP 301: Computer Organization</li>
-                            <li>MEJO 182: Intro to Graphic Design</li>
-                            <li>MEJO 187: Intro to Interactive Media</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>  -->
-
-            <!-- ### skills ================================================== 
-            <section id="skills" class="s-skills target-section">
-                <div class="row skills-content">
-                    <div class="column lg-12" data-animate-block>
-                        <h2 class="text-pretitle" data-animate-el>
-                            Skills
-                        </h2>
-                        <p class="h1" data-animate-el>
-                            Programming Languages, Frameworks & Tools
-                        </p>
-                        <ul>
-                            <li>Languages: JavaScript, Python, Java, HTML, CSS</li>
-                            <li>Frameworks: React, Node.js, Express, Bootstrap</li>
-                            <li>Design: Adobe Photoshop, Illustrator, Figma</li>
-                            <li>Other Tools: Git, VS Code, Behance</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>             -->
-            <!-- ### works ================================================== -->
-            <section id="works" class="s-works target-section">
+          <figure class="project__media">
+            <img src="assets/portfolio/digitalpayments.png" alt="Collage of small business point-of-sale devices and receipts">
+          </figure>
+        </article>
 
 
-                <div class="row works-portfolio">
+        <!-- Project 1 -->
+         <article class="project">
+          <div>
+            <p class="project__eyebrow">UI/UX Case Study</p>
+            <h3 class="project__title">DinkLink: Pickleball Matchmaking App</h3>
+            <p class="project__meta">UI/UX design for a pickleball matchmaking app featuring profiles, stats, messaging, and location-based court discovery.</p>
+            <p class="project__summary">
+              A mobile app concept that helps pickleball players find matches, track stats, and explore local courts through a clean and intuitive interface.
+            </p>
 
-                    <div class="column lg-12" data-animate-block>
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="dinklink"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
 
-                        <h2 class="text-pretitle" data-animate-el>
-                            Work <!--| <p> See More on <a href="https://www.behance.net/loganoscher">Behance</a></p> -->
-                        </h2>
-                        
-                        <p class="h1" data-animate-el>
-                            Favorite UI/UX & Graphic Projects
-                        </p>
-                        <!-- behance cards
-                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src="https://www.behance.net/embed/project/226078383?ilo0=1" frameBorder="0"></iframe></div>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src=https://www.behance.net/embed/project/226078201?ilo0=1" frameBorder="0"></iframe></div>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src="https://www.behance.net/embed/project/226077905?ilo0=1" frameBorder="0"></iframe></div>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src="https://www.behance.net/embed/project/226076175?ilo0=1" frameBorder="0"></iframe></div>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src="https://www.behance.net/embed/project/226076003?ilo0=1" frameBorder="0"></iframe></div>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <div class="behance-item"><iframe src="https://www.behance.net/embed/project/226076227?ilo0=1" frameBorder="0"></iframe></div>
-                            </li> -->
-                            
-                            <!-- <li class="folio-list__item column" data-animate-el> -->
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link"
-                                   href="#"
-                                   data-title="T-Shirt Project"
-                                   data-category="Makerspace Design"
-                                   data-img="images/portfolio/dinklink.png"
-                                   data-behance="https://www.behance.net/gallery/226078383/DinkLink-Final-Group-Project-%28Spring-25%29">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/dinklink.png" alt="DinkLink Mockup">
-                                    </div>
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-cat">UI/UX Design</div>
-                                        <div class="folio-list__item-title">DinkLink</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                              <a class="folio-list__item-link"
-                                 href="#"
-                                 data-title="Outdoor Showdown"
-                                 data-category="Graphic Design"
-                                 data-img="images/portfolio/Showdown.png"
-                                 data-behance="https://www.behance.net/gallery/226076175/Outdoor-Showdown-UNC-Hockey-Graphic-%28Jan-25%29">
-                                <div class="folio-list__item-pic">
-                                  <img src="images/portfolio/Showdown.png"
-                                       srcset="images/portfolio/Showdown.png 1x, images/portfolio/Showdown.png"
-                                       alt="Outdoor Showdown">
-                                </div>
-                                <div class="folio-list__item-text">
-                                  <div class="folio-list__item-cat">Graphic Design</div>
-                                  <div class="folio-list__item-title">Outdoor Showdown.</div>
-                                </div>
-                              </a>
-                              <a class="folio-list__proj-link" href="#" title="project link">
-                              </a>
-                            </li> 
-                            
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link"
-                                    href="#"
-                                    data-title="eBay Project"
-                                    data-category="UI/UX Design"
-                                    data-img="images/portfolio/ebaythumb.png"
-                                    data-behance="https://www.behance.net/gallery/226077905/Ebay-404-Error-Page-%28Spring-25%29">
-                                    <div class="folio-list__item-pic">
-                                    <img src="images/portfolio/ebaythumb.png" alt="eBay Project">
-                                    </div>
-                                    <div class="folio-list__item-text">
-                                    <div class="folio-list__item-cat">UI/UX Design</div>
-                                    <div class="folio-list__item-title">eBay Project</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link"
-                                   href="#"
-                                   data-title="T-Shirt Project"
-                                   data-category="Makerspace Design"
-                                   data-img="images/portfolio/BigLil.png"
-                                   data-behance="https://www.behance.net/gallery/226076965/Big-Little-Shirts-%28Fall-24%29">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/BigLil.png" alt="BigLil">
-                                    </div>
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-cat">Makerspace Design</div>
-                                        <div class="folio-list__item-title">T-Shirt Project</div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="folio-list__item column" data-animate-el>
-                                <a class="folio-list__item-link"
-                                   href="#"
-                                   data-title="T-Shirt Project"
-                                   data-category="Makerspace Design"
-                                   data-img="images/portfolio/about.png"
-                                   data-behance="https://www.behance.net/gallery/226078201/About-Me">
-                                    <div class="folio-list__item-pic">
-                                        <img src="images/portfolio/about.png" alt="About Me">
-                                    </div>
-                                    <div class="folio-list__item-text">
-                                        <div class="folio-list__item-cat">UI/UX Design</div>
-                                        <div class="folio-list__item-title">About Me</div>
-                                    </div>
-                                </a>
-                            </li>
-                          </ul>                          
+          <figure class="project__media">
+            <img src="assets/portfolio/dinklink.png" alt="dinklight UX case study mockup">
+          </figure>
+        </article>
 
-                </div> <!-- end works-portfolio -->
-            </section>
-        </main>
+        <!-- Project 2 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Responsive UI Exploration</p>
+            <h3 class="project__title">eBay Interface Redesign</h3>
+            <p class="project__meta">Responsive UI redesign of eBay’s product pages and bidding interactions focused on clarity, hierarchy, and ease of use.</p>
+            <p class="project__summary">
+              A modernized redesign of a select few of eBay’s interfaces with simplified layouts and a cleaner responsive user experience.
+            </p>
 
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="ebay"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+
+          <figure class="project__media">
+            <img src="assets/portfolio/ebayredesign.png" alt="Ebay Redesign">
+          </figure>
+        </article>
+
+
+        <!-- Project 3 -->
+        <article class="project">
+          <div>
+            <p class="project__eyebrow">Digital Media & Graphic Design</p>
+            <h3 class="project__title">UNC Hockey Graphic Collection</h3>
+            <p class="project__meta">Social media graphic collection for UNC Hockey featuring game promotions, countdowns, and team-focused visual branding.</p>
+            <p class="project__summary">
+              A series of promotional social graphics created for UNC Hockey with bold visuals, consistent branding, and high-energy layouts.
+            </p>
+
+            <div class="project__actions">
+              <button
+                class="btn project__more"
+                data-project="hockey"
+                type="button"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
+
+          <figure class="project__media">
+            <img src="assets/portfolio//Hockey.png" alt="hockey photos">
+          </figure>
+        </article>
+
+        
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about-section reveal-on-scroll">
+      <div class="about-inner">
+        <h2 class="about-heading">About</h2>
+        <p class="about-body">
+          I've always been drawn to the intersection of design, technology, and user experience. As a third-year undergraduate student at UNC Chapel Hill pursuing a double major in Computer Science and Media & Journalism, I am focused on UI/UX design, web design, and interactive media. My passion for UI/UX, graphic design, and web design drives me to create content that is both visually appealing and user-centric. From 3D printing and laser cutting to building user-friendly web interfaces, I am constantly seeking ways to enhance the way people interact with technology.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section reveal-on-scroll">
+      <div class="about-inner">
+        <h2 class="about-heading">Contact</h2>
+        <p class="about-body">
+          For freelance work or collaborations, feel free to reach out.
+        </p>
+        <ul class="about-contact-list">
+          <li><a href="https://www.linkedin.com/in/logan-oscher/" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:loganosc@unc.edu">Email</a></li>
+          <li><a href="https://www.behance.net/loganoscher" target="_blank" rel="noreferrer">Behance</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
         <!-- ## footer -->
             <footer class="s-footer">
                 <div class="footer-container">
@@ -281,19 +219,47 @@
                         <a href="https://www.behance.net/loganoscher" class="fa fa-behance"></a>
                         <a href="http://linkedin.com/in/logan-oscher" class="fa fa-linkedin"></a>
                         <a href="https://www.instagram.com/loganocreates" class="fa fa-instagram"></a>
+                        <a href="mailto:loganosc@unc.edu" class="fa fa-envelope"></a>
                     </div>
-                    <span class="footyform">Contact at <a href="oscher.logan@gmail.com"> oscher.logan@gmail.com</a></span>
-
                 </div>
             </footer> <!-- end s-footer -->
 
-    </div> <!-- end -s-pagewrap -->
+            
+</div>
 
+<!-- PROJECT MODAL -->
+<div class="project-modal" id="project-modal" aria-hidden="true">
+  <div class="project-modal__backdrop" data-modal-close></div>
+  <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <p class="project-modal__eyebrow" id="project-modal-type"></p>
+    <h2 class="project-modal__title" id="project-modal-title"></h2>
 
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <figure class="project-modal__media">
+      <img id="project-modal-image" src="" alt="">
+    </figure>
+
+    <div class="project-modal__body" id="project-modal-body"></div>
+
+    <div class="project-modal__footer">
+      <a
+        href="#"
+        target="_blank"
+        rel="noreferrer"
+        class="btn project-modal__behance-link"
+        id="project-modal-behance"
+      >
+        View on Behance
+      </a>
+
+      <button type="button" class="project-modal__close-btn" data-modal-close>×</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
