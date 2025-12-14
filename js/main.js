@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
       imageAlt: "DinkLink Mockup"
     },
     ebay: {
-      type: "Responsive UI Exploration",
+      type: "UI/UX · Redesign<",
       title: "eBay Interface Redesign",
       body: `
         <p>
