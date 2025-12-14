@@ -227,22 +227,25 @@ h6, .h6 { font-size: 2rem; }
 
 .btn {
   display: inline-flex;
-  text-transform: uppercase;
-  font-family: var(--subheading-font);
   align-items: center;
   gap: 0.6rem;
   border-radius: 999px;
   padding: 0.8rem 1.8rem;
   border: 1px solid rgba(249, 250, 251, 0.22);
   background: rgba(18, 31, 43, 0.7);
+  font-weight: bold !important;
   color: var(--color-text-soft);
-  font-size: 1.4rem;
   text-decoration: none;
   cursor: pointer;
   transition:
     background var(--transition-fast),
     border-color var(--transition-fast),
     transform var(--transition-fast);
+  font-size: 1.2rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  margin-bottom: 1.2rem;
 }
 
 .btn:hover {
@@ -922,6 +925,10 @@ h6, .h6 { font-size: 2rem; }
   gap: 1.2rem;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.case-actions--spaced {
+  margin-top: 1.8rem;
 }
 
 .case-actions .btn {

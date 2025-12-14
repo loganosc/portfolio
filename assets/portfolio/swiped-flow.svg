@@ -1,0 +1,46 @@
+<svg width="1200" height="620" viewBox="0 0 1200 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="620" rx="28" fill="url(#bg2)"/>
+  <text x="60" y="70" fill="#0F172A" font-family="Inter, sans-serif" font-size="32" font-weight="700">Posting → Matching → Handoff</text>
+  <text x="60" y="110" fill="#334155" font-family="Inter, sans-serif" font-size="18">Happy path for the Swiped MVP.</text>
+
+  <g transform="translate(80 160)">
+    <rect width="300" height="360" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="24" y="42" fill="#0F172A" font-family="Inter, sans-serif" font-size="20" font-weight="700">1. Post a swipe</text>
+    <rect x="24" y="70" width="252" height="50" rx="12" fill="#0EA5E9" opacity="0.12"/>
+    <rect x="24" y="132" width="200" height="18" rx="9" fill="#0F172A" opacity="0.3"/>
+    <rect x="24" y="164" width="140" height="18" rx="9" fill="#0EA5E9" opacity="0.8"/>
+    <rect x="24" y="200" width="252" height="70" rx="14" fill="#0EA5E9" opacity="0.14"/>
+    <rect x="24" y="288" width="182" height="40" rx="12" fill="#0EA5E9" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(450 160)">
+    <rect width="300" height="360" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="24" y="42" fill="#0F172A" font-family="Inter, sans-serif" font-size="20" font-weight="700">2. Auto-match</text>
+    <rect x="24" y="70" width="252" height="50" rx="12" fill="#0EA5E9" opacity="0.12"/>
+    <rect x="24" y="132" width="160" height="18" rx="9" fill="#0F172A" opacity="0.3"/>
+    <rect x="24" y="164" width="120" height="18" rx="9" fill="#0EA5E9" opacity="0.8"/>
+    <rect x="24" y="200" width="252" height="70" rx="14" fill="#0EA5E9" opacity="0.18"/>
+    <rect x="24" y="288" width="210" height="40" rx="12" fill="#0EA5E9" opacity="0.9"/>
+  </g>
+
+  <g transform="translate(820 160)">
+    <rect width="300" height="360" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="24" y="42" fill="#0F172A" font-family="Inter, sans-serif" font-size="20" font-weight="700">3. Handoff</text>
+    <rect x="24" y="70" width="252" height="50" rx="12" fill="#0EA5E9" opacity="0.12"/>
+    <rect x="24" y="132" width="170" height="18" rx="9" fill="#0F172A" opacity="0.3"/>
+    <rect x="24" y="164" width="100" height="18" rx="9" fill="#0EA5E9" opacity="0.8"/>
+    <rect x="24" y="200" width="252" height="70" rx="14" fill="#0EA5E9" opacity="0.22"/>
+    <rect x="24" y="288" width="132" height="40" rx="12" fill="#0EA5E9" opacity="0.9"/>
+  </g>
+
+  <path d="M380 340 C420 240 510 240 550 340" stroke="#0EA5E9" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <path d="M750 340 C790 240 880 240 920 340" stroke="#0EA5E9" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <polygon points="545,320 560,340 545,360" fill="#0EA5E9" opacity="0.9"/>
+  <polygon points="915,320 930,340 915,360" fill="#0EA5E9" opacity="0.9"/>
+</svg>
