@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Swiped Web App · Logan Oscher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="page-gradient"></div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <div class="site-header__brand">
+          <a href="index.html" class="brand-link">Logan Oscher</a>
+        </div>
+
+        <nav class="site-header__nav">
+          <a href="index.html#work">Featured</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="page-main">
+      <section class="case-study-hero page-section-inner">
+        <div class="case-study-hero__grid">
+          <div>
+            <p class="case-study-eyebrow">Full-Stack Web Application</p>
+            <h1 class="case-study-title">Swiped: Meal Swaps Made Easy</h1>
+            <p class="case-study-lede">
+              A full-stack Next.js app that lets classmates buy and sell UNC dining swipes with live chat, NutriAI assistance, and a dashboard for listings and history—built for COMP 426.
+            </p>
+
+            <ul class="case-study-meta">
+              <li>Team: Logan Oscher, Ryder, Lauren, Clay</li>
+              <li>Course: COMP 426 final project</li>
+              <li>Tools: Next.js, React, Supabase, Drizzle, Tailwind, OpenAI API</li>
+            </ul>
+
+            <div class="case-actions">
+              <a class="btn" href="index.html#work">Back to portfolio</a>
+            </div>
+          </div>
+
+          <figure>
+            <img src="assets/swiped/alt_cover.png" alt="Swiped cover graphic with mobile screens">
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>App Snapshot</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Problem</h3>
+            <p>Students with dining plans ended every week with unused swipes while classmates without plans struggled to afford campus meals.</p>
+          </div>
+          <div class="case-card">
+            <h3>Goal</h3>
+            <p>Make exchanging swipes feel safe, fast, and fair with authenticated accounts, clear listings, and live chat.</p>
+          </div>
+          <div class="case-card">
+            <h3>Outcome</h3>
+            <p>Full-stack web app with Supabase-authenticated accounts, live marketplace to sell/buy swipes, real-time chat per listing, and an AI nutrition planner backed by Supabase Realtime.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner intro-section">
+        <h2>Why we built it</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Opportunity</h3>
+            <p>Existing “group chat trading” was messy and slow. We saw a chance to replace ad-hoc posts with a structured marketplace where listings, pricing, and chat stay in one place.</p>
+          </div>
+          <div class="case-card">
+            <h3>Approach</h3>
+            <p>Full-stack sprint: Next.js + TypeScript with Tailwind/shadcn UI, Supabase for auth/DB/Realtime, Drizzle + tRPC for type-safe data, and a scraper-fed OpenAI nutrition assistant.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>What we built</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Account Management</h3>
+            <p>Supabase Auth sign-up/login, profiles with display name, username, avatar, theme preference, and logout from Settings.</p>
+          </div>
+          <div class="case-card">
+            <h3>Marketplace & Chat</h3>
+            <p>Create and manage sell listings; buyers can purchase at asking price or negotiate via one-to-one chat powered by Supabase Realtime with unread counts.</p>
+          </div>
+          <div class="case-card">
+            <h3>NutriAI Assistant</h3>
+            <p>OpenAI-backed chat answers nutrition questions about UNC dining halls using scraped menu data; prompt guards keep replies nutrition-only.</p>
+          </div>
+          <div class="case-card">
+            <h3>Dashboard & History</h3>
+            <p>Weekly activity, balances, and transaction tables (Recharts + tables) to audit purchases and sales across the semester.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Key Flows</h2>
+        <p>Core flows: create a sell listing, browse/buy or negotiate, and keep the deal in-sync with live chat.</p>
+        <div class="case-grid">
+          <figure class="case-figure">
+            <img src="assets/swiped/sell.png" alt="Flow for posting a meal swipe">
+            <figcaption>Create a listing with dining hall, availability window, price, and notes.</figcaption>
+          </figure>
+          <div class="case-card">
+            <h3>Flow details</h3>
+            <ul class="case-list">
+              <li>Sellers set hall, window, price, and notes; listings can be edited or cancelled anytime.</li>
+              <li>Buyers can purchase at ask or start a negotiation inside the per-listing chat.</li>
+              <li>Supabase Realtime updates listing status and chat instantly without refreshes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>AI Nutrition Planner</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>What it does</h3>
+            <p>Students ask about dining hall foods, nutrition details, or meal ideas; responses come back instantly in-app and update in the chat thread.</p>
+          </div>
+          <div class="case-card">
+            <h3>How it works</h3>
+            <p>OpenAI API generates answers scoped to scraped menu data; Supabase Realtime inserts broadcast new chat messages so the answer appears instantly for the asker.</p>
+          </div>
+          <div class="case-card">
+            <h3>Guardrails</h3>
+            <p>Prompt engineering forces nutrition-only responses, blocking homework or unrelated topics to keep the tool on-mission.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Product Screens</h2>
+        <div class="case-grid">
+          <figure class="case-figure">
+            <img src="assets/swiped/signup.png" alt="Swiped signup screen">
+            <figcaption>Supabase Auth sign-up with school email keeps accounts tied to students.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/chat.png" alt="Swiped chat handoff screen">
+            <figcaption>Per-listing chat keeps negotiations and confirmations traceable.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/buy.png" alt="Swiped buy swipe screen">
+            <figcaption>Buy flow shows cafeteria, timing, and pricing before you commit.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/dashboard.png" alt="Swiped dashboard screen">
+            <figcaption>Dashboard shows active listings, recent activity, and balances.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/convo.png" alt="Swiped confirmation and chat screen">
+            <figcaption>Chat threads keep negotiation history and confirmations in one place.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner case-section--muted">
+        <h2>Dark Mode Snapshots</h2>
+        <div class="case-grid">
+          <figure class="case-figure">
+            <img src="assets/swiped/dark_dash.png" alt="Swiped dark mode dashboard">
+            <figcaption>Dark dashboard keeps hierarchy with bold chips for status.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/dark_buy.png" alt="Swiped dark mode buy flow">
+            <figcaption>Buy flow in dark mode retains clear primary/secondary actions.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/swiped/dark_convo.png" alt="Swiped dark mode conversation view">
+            <figcaption>Chat in dark mode stays readable with accent highlights.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner case-section--muted">
+        <h2>Build details</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Tech stack</h3>
+            <p>Next.js 15 + TypeScript with tRPC, Tailwind + shadcn/ui, Recharts; Supabase Auth/Postgres/Realtime with Drizzle ORM for schema + queries.</p>
+          </div>
+          <div class="case-card">
+            <h3>Data pipeline</h3>
+            <p>Cheerio/TSX script scrapes the dining hall site (npm run scrape-cds-menu) to keep menus current for listings and NutriAI context.</p>
+          </div>
+          <div class="case-card">
+            <h3>Realtime + AI safety</h3>
+            <p>Supabase Realtime channels broadcast new listings, negotiations, and AI messages instantly; OpenAI prompts are scoped to nutrition to block unrelated questions.</p>
+          </div>
+          <div class="case-card">
+            <h3>Env & tooling</h3>
+            <p>.env.local with OPENAI_KEY, DATABASE_URL, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY; lint/build scripts keep the repo production-ready.</p>
+          </div>
+           <div class="case-card">
+            <h3>Nutrition guardrails</h3>
+            <p>NutriAI prompt engineering keeps responses nutrition-only, using scraped menu data to avoid off-topic answers.</p>
+          </div>
+          <div class="case-card">
+            <h3>Traceable negotiations</h3>
+            <p>One-to-one chat per listing replaces ad-hoc DMs so pricing, timing, and decisions stay in a single thread.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Live Web App</h2>
+        <p>Explore the responsive web build of Swiped below or open it in a new tab.</p>
+        <div class="figma-embed" style="height:640px">
+          <iframe title="Swiped live web app" src="https://swipedunc.vercel.app/" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="case-actions case-actions--spaced">
+          <a class="btn" href="https://swipedunc.vercel.app/" target="_blank" rel="noopener">Open live site</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="s-footer">
+      <div class="footer-container">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <span class="footyform">Logan Oscher</span>
+        <div class="icons">
+          <a href="https://www.behance.net/loganoscher" class="fa fa-behance"></a>
+          <a href="http://linkedin.com/in/logan-oscher" class="fa fa-linkedin"></a>
+          <a href="https://www.instagram.com/loganocreates" class="fa fa-instagram"></a>
+          <a href="mailto:loganosc@unc.edu" class="fa fa-envelope"></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
