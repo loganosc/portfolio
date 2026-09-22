@@ -13,6 +13,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Test FTP Connection
+        run: |
+          timeout 10 bash -c '</dev/tcp/109.106.250.188/21' && echo "FTP port is reachable" || echo "FTP port is NOT reachable"
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
