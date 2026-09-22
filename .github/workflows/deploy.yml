@@ -11,15 +11,16 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: 109.106.250.188
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT }}
-          local-dir: ./              # <-- correct (your repo root)
-          server-dir: ${{ secrets.FTP_DIR }}/
+          port: 21
+          protocol: ftp
+          local-dir: ./
+          server-dir: /public_html/
           dangerous-clean-slate: true
