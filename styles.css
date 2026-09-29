@@ -142,7 +142,7 @@ button { font: inherit; color: inherit; }
    right column, i.e. evenly between the content's edge and the viewport's edge. */
 .desktop {
   display: grid;
-  grid-template-columns: minmax(56px, 1fr) minmax(0, 1384px) minmax(212px, 1fr);
+  grid-template-columns: minmax(56px, 1fr) minmax(0, 1200px) minmax(212px, 1fr);
   align-items: start;
   padding: 44px 0 56px;
 }
@@ -1182,7 +1182,7 @@ dl.info__panel dt:nth-last-of-type(1), dl.info__panel dd:last-of-type { border-b
 /* ================= Responsive ================= */
 
 @media (max-width: 1199px) {
-  .desktop { grid-template-columns: minmax(36px, 1fr) minmax(0, 1384px) minmax(180px, 1fr); padding: 36px 0 48px; }
+  .desktop { grid-template-columns: minmax(36px, 1fr) minmax(0, 1200px) minmax(180px, 1fr); padding: 36px 0 48px; }
   .bio { padding: 32px 36px 40px; }
   .bio__title { font-size: 64px; line-height: 56px; }
 }
