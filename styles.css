@@ -259,8 +259,10 @@ button { font: inherit; color: inherit; }
 .bio__title {
   margin: 0;
   font-family: var(--vt);
-  font-size: 76px;
-  line-height: 64px;
+  /* Shrinks with the window just enough that "& Building Experiences" stays on one line beside the
+     right column (the line is ~8.8x the font size wide); 76px wherever that already fits. */
+  font-size: clamp(44px, calc((100vw - 740px) / 9), 76px);
+  line-height: 0.8421;
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -281,6 +283,7 @@ button { font: inherit; color: inherit; }
    its prompt, headline, text and buttons rather than left as one blank block. */
 @media (min-width: 1024px) {
   .hero { align-items: stretch; }
+  .window--info { flex-grow: 1; } /* if bio.txt is the taller column, Logan Info fills the rest */
   .window--bio { display: flex; flex-direction: column; }
   .bio { flex-grow: 1; justify-content: space-between; }
 }
@@ -1184,12 +1187,13 @@ dl.info__panel dt:nth-last-of-type(1), dl.info__panel dd:last-of-type { border-b
 @media (max-width: 1199px) {
   .desktop { grid-template-columns: minmax(36px, 1fr) minmax(0, 1200px) minmax(180px, 1fr); padding: 36px 0 48px; }
   .bio { padding: 32px 36px 40px; }
-  .bio__title { font-size: 64px; line-height: 56px; }
+  .bio__title { font-size: clamp(40px, calc((100vw - 670px) / 9), 64px); line-height: 0.875; }
 }
 
 @media (max-width: 1023px) {
   .hero { flex-direction: column; align-items: stretch; }
   .hero__side { flex: none; max-width: none; margin: 32px 0 0; }
+  .bio__title { font-size: 64px; line-height: 56px; } /* stacked: bio.txt is full width */
   .works__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 }
 
