@@ -26,10 +26,14 @@ jobs:
           port: 21
           protocol: ftp
           local-dir: ./
-          server-dir: /public_html/
-          dangerous-clean-slate: true
+          # loganoscher.com's web root inside the Hostinger account (the account-level
+          # /public_html/ is a different folder that the site doesn't serve).
+          server-dir: /domains/loganoscher.com/public_html/
+          # No clean slate: only new or changed files are uploaded and nothing on the
+          # server is wiped first.
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            **/.DS_Store
             README.md
