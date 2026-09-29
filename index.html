@@ -141,7 +141,7 @@
         <section id="work" class="window" aria-label="Selected Work">
           <div class="titlebar titlebar--blue">
             <span class="titlebar__ctl" aria-hidden="true"></span>
-            <span class="titlebar__title"><span>C:\Logan\Interactive_Works — <span id="count-label">6 items</span></span></span>
+            <span class="titlebar__title"><span>C:\Logan\Interactive_Works — <span id="count-label">7 items</span></span></span>
             <span class="titlebar__ctl titlebar__ctl--max" aria-hidden="true"><span></span></span>
           </div>
           <!-- Announces filter results; kept outside the title bar, which modern mode hides. -->
@@ -149,8 +149,8 @@
           <div class="works__head">
             <h2>Selected Work</h2>
             <div role="group" aria-label="Filter projects" class="works__filters">
-              <button type="button" class="filter" data-filter="all" aria-pressed="true">All <span class="filter__n">(6)</span></button>
-              <button type="button" class="filter" data-filter="ux" aria-pressed="false">Product &amp; UX <span class="filter__n">(5)</span></button>
+              <button type="button" class="filter" data-filter="all" aria-pressed="true">All <span class="filter__n">(7)</span></button>
+              <button type="button" class="filter" data-filter="ux" aria-pressed="false">Product &amp; UX <span class="filter__n">(6)</span></button>
               <button type="button" class="filter" data-filter="media" aria-pressed="false">Media &amp; Graphics <span class="filter__n">(1)</span></button>
             </div>
           </div>
@@ -237,6 +237,20 @@
                 <div class="card__foot">
                   <span class="card__tags">#React #Vite #Ollama</span>
                   <a href="https://github.com/loganosc/insightui" target="_blank" rel="noopener" class="btn openbtn" data-case="insightui" aria-label="Open InsightUI: AI UX Critique">Open <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="card" data-cat="ux" style="--bar: var(--periwinkle-light)">
+              <div class="card__bar"><span>08_Logan_OS.sys</span><span>Web Design</span></div>
+              <img src="assets/covers/loganos.webp" alt="Logan.os cover: a retro desktop portfolio on a pixel CRT monitor" width="800" height="376" class="card__img only-retro" loading="lazy">
+              <img src="assets/covers/modern/loganos.webp" alt="Logan.os in retro and modern modes, side by side in browser windows" width="1600" height="1000" class="card__img card__img--photo only-modern" loading="lazy">
+              <div class="card__body">
+                <h3>Logan.os: This Portfolio</h3>
+                <p>The retro desktop you're on, with a Modern mode, built from Google Stitch explorations with Claude.</p>
+                <div class="card__foot">
+                  <span class="card__tags">#UIDesign #FrontEnd #Motion</span>
+                  <a href="https://github.com/loganosc/portfolio-designs" target="_blank" rel="noopener" class="btn openbtn" data-case="loganos" aria-label="Open Logan.os: This Portfolio">Open <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
@@ -349,7 +363,7 @@
 </dialog>
 
 <!-- Case study content. Swiped, DinkLink and Vanguard are generated from the root
-     *-case-study.html pages by scripts/sync_case_studies.py; eBay, Hockey, InsightUI and About are hand-written. -->
+     *-case-study.html pages by scripts/sync_case_studies.py; eBay, Hockey, InsightUI, Logan.os and About are hand-written. -->
 <template id="cs-swiped">
 <section class="case-study-hero page-section-inner">
         <div class="case-study-hero__grid">
@@ -1199,6 +1213,195 @@
         <p>InsightUI runs locally with Node.js and Ollama. Setup instructions, the critique schema, and the Chrome extension are all in the repository.</p>
         <div class="case-actions case-actions--spaced">
           <a class="btn" href="https://github.com/loganosc/insightui" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+      </section>
+</template>
+<template id="cs-loganos">
+<section class="case-study-hero page-section-inner">
+        <div class="case-study-hero__grid">
+          <div>
+            <p class="case-study-eyebrow">UI Design · Front-End · Motion</p>
+            <h1 class="case-study-title">Logan.os: A Retro Desktop Portfolio</h1>
+            <p class="case-study-lede">
+              The site you're on. I rebuilt my portfolio as a retro operating system, with windows, desktop icons and a taskbar with a live clock, and added a one-click Modern mode for anyone who'd rather read it clean.
+            </p>
+
+            <ul class="case-study-meta">
+              <li>Role: Designer &amp; developer</li>
+              <li>Built with: HTML, CSS and JavaScript; no framework, no build step</li>
+              <li>Tools: Google Stitch, Claude, Claude Design, Claude Code</li>
+            </ul>
+          </div>
+
+          <figure>
+            <img class="only-retro" src="assets/covers/loganos.webp" width="800" height="376" alt="Logan.os cover: a retro desktop portfolio on a pixel CRT monitor">
+            <img class="only-modern" src="assets/covers/modern/loganos.webp" width="1600" height="1000" alt="Logan.os in retro and modern modes, side by side in browser windows" loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Project Snapshot</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Problem</h3>
+            <p>My previous portfolio was a clean, dark, text-first page that listed my work. I wanted the site itself to show how I design and what I can build.</p>
+          </div>
+          <div class="case-card">
+            <h3>Goal</h3>
+            <p>Make the portfolio a design piece of its own: memorable and playful, without getting in the way of someone who just wants to see the work.</p>
+          </div>
+          <div class="case-card">
+            <h3>Outcome</h3>
+            <p>A retro desktop with an animated intro, filterable project windows and case-study pop-ups, plus a Modern mode that restyles the whole site in one click.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Process</h2>
+        <p>I moved from quick explorations to real, working pages, so every direction was judged in the browser at actual size rather than as a static mockup.</p>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Google Stitch</h3>
+            <p>The first step: I used Google Stitch to generate fast layout explorations and find the directions worth pursuing before writing any code.</p>
+          </div>
+          <div class="case-card">
+            <h3>Claude</h3>
+            <p>I built the promising directions out as live sites with Claude, pairing on the layout, the intro animation, Modern mode, accessibility and responsive fixes, and the deploy.</p>
+          </div>
+          <div class="case-card">
+            <h3>Claude Design</h3>
+            <p>The project covers, the pixel-art thumbnails on every card, were designed with Claude Design so they share one visual language with the desktop around them.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Design Explorations</h2>
+        <p>Before settling on Logan.os, I took several directions all the way to working pages. They're all kept side by side in my portfolio-designs repo.</p>
+        <div class="case-grid">
+          <figure class="case-figure">
+            <img src="assets/process/original.webp" width="1440" height="900" alt="The previous portfolio: a dark page with a large serif statement" loading="lazy">
+            <figcaption>Original: the previous live site, a dark, editorial serif statement.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/process/dual.webp" width="1440" height="900" alt="Dual: a System 7-style Finder window with a bio inspector and a project browser" loading="lazy">
+            <figcaption>Dual: a System 7-style Finder with a bio inspector, a sidebar of volumes and grid/list views.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/process/pastel.webp" width="1440" height="900" alt="Pastel OS: a pastel workspace window with a large headline and a verify-humanity widget" loading="lazy">
+            <figcaption>Pastel OS: a pastel workspace with a "verify humanity" widget and a searchable project directory.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/process/retro.webp" width="1440" height="900" alt="Logan.os: a full-bleed retro desktop with bio.txt, Logan Info and Interactive_Works windows" loading="lazy">
+            <figcaption>Logan.os: the full-bleed retro desktop that became the site.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Why This One</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Personality with structure</h3>
+            <p>The OS metaphor turns every section into a window (bio.txt, Logan Info, Interactive_Works), so the playful idea also organizes the page.</p>
+          </div>
+          <div class="case-card">
+            <h3>Room for the work</h3>
+            <p>Full-bleed windows give each project a large, color-coded card, and the covers carry most of the color so the work stays the focus.</p>
+          </div>
+          <div class="case-card">
+            <h3>Both of my majors</h3>
+            <p>It's a design piece and an engineering one: a strong visual concept from my Media side, built by hand from my Computer Science side.</p>
+          </div>
+          <div class="case-card">
+            <h3>An exit for everyone</h3>
+            <p>Retro isn't for every reader, so Modern mode keeps the same content in a clean layout, one click away.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Animation</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>The CRT intro</h3>
+            <ul class="case-list">
+              <li>The site appears inside a beige CRT monitor from the very first frame.</li>
+              <li>A pixel cursor glides to the screen and clicks, with a square ripple.</li>
+              <li>The camera dives in: the monitor scales up while the site scales to full size on the same easing, so they land together.</li>
+            </ul>
+          </div>
+          <div class="case-card">
+            <h3>Used with restraint</h3>
+            <ul class="case-list">
+              <li>It plays once per session, and the taskbar's Restart button replays it.</li>
+              <li>It's skipped for visitors who prefer reduced motion, and on phones, where scaling the whole site would stutter.</li>
+              <li>It's pure CSS, sized to the viewport, so the monitor fits any screen.</li>
+            </ul>
+          </div>
+          <div class="case-card">
+            <h3>Small moments</h3>
+            <ul class="case-list">
+              <li>Pop-up windows open with a stepped animation that feels like an old OS.</li>
+              <li>Cards and buttons lift on hover, and the prompt cursor blinks.</li>
+              <li>Modern mode smooths the motion and skips the intro.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Modern Mode</h2>
+        <div class="case-grid">
+          <figure class="case-figure">
+            <img src="assets/process/modern.webp" width="1440" height="900" alt="Logan.os in Modern mode: a black-and-white serif layout with product mockups" loading="lazy">
+            <figcaption>Modern mode: the same layout in a black-and-white editorial serif, with product mockups as covers.</figcaption>
+          </figure>
+          <div class="case-card">
+            <h3>One switch, whole site</h3>
+            <p>The taskbar's Modernize button, or the tip under Logan Info, restyles everything instantly with no reload: hairline borders, soft shadows, the Newsreader serif, and mockup covers instead of pixel art. The choice is remembered and applied before the first paint, so neither look ever flashes.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner case-section--muted">
+        <h2>Build Details</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <h3>Tech stack</h3>
+            <p>Plain HTML, CSS and JavaScript. Modern mode is a separate stylesheet scoped to one class, so the retro design stays the source of truth.</p>
+          </div>
+          <div class="case-card">
+            <h3>Performance</h3>
+            <p>Images are lazy-loaded WebPs, each mode downloads only its own covers, and versioned CSS and JS links keep returning visitors current.</p>
+          </div>
+          <div class="case-card">
+            <h3>Accessibility</h3>
+            <p>Keyboard focus that never gets lost, screen-reader labels and announcements, reduced-motion support, and text colors checked against WCAG contrast.</p>
+          </div>
+          <div class="case-card">
+            <h3>Responsive</h3>
+            <p>Desktop renders at a relaxed 80% scale; tablets and phones stack the windows, with the desktop icons moving to the bottom as contact links.</p>
+          </div>
+          <div class="case-card">
+            <h3>Case studies</h3>
+            <p>Project write-ups open in a themed window. Swiped, DinkLink and Vanguard are generated from their standalone pages by a small sync script, so each has one source.</p>
+          </div>
+          <div class="case-card">
+            <h3>Deploy</h3>
+            <p>A push to GitHub deploys the site to loganoscher.com automatically through a GitHub Actions workflow.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Source Code</h2>
+        <p>Every design exploration, including Logan.os, lives in one repository, and the live site is deployed from its own.</p>
+        <div class="case-actions case-actions--spaced">
+          <a class="btn" href="https://github.com/loganosc/portfolio-designs" target="_blank" rel="noopener">View the designs on GitHub</a>
+          <a href="https://github.com/loganosc/portfolio" target="_blank" rel="noopener">Live site repo</a>
         </div>
       </section>
 </template>
