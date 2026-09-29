@@ -1,12 +1,5 @@
 /* Logan.os — retro desktop portfolio. Source of truth: the 1440×1000 design canvas (see DESIGN.md). */
 
-/* Desktop displays at 80% scale (like Chrome's 80% zoom), giving the layout 25% more room; tablets and
-   phones stay at 100%. --zoom lets vw-based sizes work out the zoomed layout width (100vw / --zoom). */
-:root { --zoom: 1; }
-@media (min-width: 1024px) {
-  :root { --zoom: 0.8; zoom: 0.8; }
-}
-
 :root {
   --ink: #12131C;
   --yellow: #FFDEA4;
@@ -268,7 +261,7 @@ button { font: inherit; color: inherit; }
   font-family: var(--vt);
   /* Shrinks with the window just enough that "& Building Experiences" stays on one line beside the
      right column (the line is ~8.8x the font size wide); 76px wherever that already fits. */
-  font-size: clamp(44px, calc((100vw / var(--zoom) - 740px) / 9), 76px);
+  font-size: clamp(44px, calc((100vw - 740px) / 9), 76px);
   line-height: 0.8421;
   font-weight: 400;
   letter-spacing: 0;
@@ -1194,7 +1187,7 @@ dl.info__panel dt:nth-last-of-type(1), dl.info__panel dd:last-of-type { border-b
 @media (max-width: 1199px) {
   .desktop { grid-template-columns: minmax(36px, 1fr) minmax(0, 1200px) minmax(180px, 1fr); padding: 36px 0 48px; }
   .bio { padding: 32px 36px 40px; }
-  .bio__title { font-size: clamp(40px, calc((100vw / var(--zoom) - 670px) / 9), 64px); line-height: 0.875; }
+  .bio__title { font-size: clamp(40px, calc((100vw - 670px) / 9), 64px); line-height: 0.875; }
 }
 
 @media (max-width: 1023px) {
