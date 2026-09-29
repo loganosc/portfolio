@@ -1,0 +1,384 @@
+/* Logan.os — modern mode. The taskbar's Modernize button puts .is-modern on <html>; every rule here
+   is scoped to it, so the retro design in styles.css is untouched. Same layout and content: black-and-white
+   editorial serif (Newsreader) with hairline borders and soft shadows, and product mockups for covers. */
+
+:root.is-modern {
+  --ink: #0a0a0a;
+  --body: #3f3f46;
+  --muted: #71717a;
+  --link: #0a0a0a;
+  --plum: #71717a;
+  --plum-dark: #52525b;
+  --prompt: #71717a;
+
+  /* Accent fills collapse to one neutral, so title bars, card bars and badges go quiet. */
+  --yellow: #f4f4f5;
+  --yellow-light: #f4f4f5;
+  --pink: #f4f4f5;
+  --pink-light: #f4f4f5;
+  --periwinkle: #f4f4f5;
+  --periwinkle-light: #f4f4f5;
+  --periwinkle-pale: #f4f4f5;
+
+  --desktop: #fafafa;
+  --grid: transparent;
+  --well: #fafafa;
+  --surface: #ffffff;
+  --room: #fafafa;
+  --bevel: transparent;
+  --dash: #e4e4e7;
+
+  --line: #e4e4e7;
+  --shade: transparent;
+  --bw: 1px;
+  --bw-thin: 1px;
+
+  /* Newsreader's optical sizes give headlines a finer cut and body text a sturdier one. */
+  --pixel: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --vt: 'Newsreader', Georgia, 'Times New Roman', serif;
+
+  --soft: 0 1px 2px rgba(10, 10, 10, 0.04), 0 4px 16px rgba(10, 10, 10, 0.05);
+  --lift: 0 2px 4px rgba(10, 10, 10, 0.04), 0 12px 28px rgba(10, 10, 10, 0.09);
+  --r: 14px;
+  --r-sm: 10px;
+}
+
+.is-modern body { -webkit-font-smoothing: antialiased; font-optical-sizing: auto; }
+.is-modern a:focus-visible, .is-modern button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* ---------- Mode-specific images ---------- */
+
+/* Cards and case-study heroes carry a pixel cover (.only-retro) and a product mockup (.only-modern).
+   Both are lazy, and hidden lazy images aren't fetched, so each mode downloads only its own. */
+:root:not(.is-modern) .only-modern,
+.is-modern .only-retro { display: none; }
+
+/* The mockups come in different shapes; crop them to one ratio so the card grid stays even. */
+.is-modern .card__img--photo { aspect-ratio: 16 / 10; object-fit: cover; object-position: center; }
+
+/* ---------- Retro-only pieces ---------- */
+
+.is-modern .bio__prompt,
+.is-modern .icons,
+.is-modern .restart,
+.is-modern .titlebar__ctl,
+.is-modern .menubar__logo svg { display: none; }
+
+/* ---------- Menu bar ---------- */
+
+.is-modern .menubar { height: 52px; font-size: 16px; }
+.is-modern .menubar__logo { font-weight: 700; letter-spacing: -0.01em; }
+.is-modern .navlink { padding: 6px 12px; border-radius: 8px; color: var(--body); font-weight: 500; }
+.is-modern .navlink:hover { background: #f4f4f5; color: var(--ink); }
+.is-modern .led { width: 7px; height: 7px; border: 0; border-radius: 50%; background: #22c55e; }
+
+/* ---------- Desktop and windows ---------- */
+
+.is-modern .scroll,
+.is-modern .viewer__scroll { scrollbar-color: #d4d4d8 transparent; }
+.is-modern .scroll::-webkit-scrollbar,
+.is-modern .viewer__scroll::-webkit-scrollbar { width: 10px; }
+.is-modern .scroll::-webkit-scrollbar-track,
+.is-modern .viewer__scroll::-webkit-scrollbar-track { background: transparent; border: 0; }
+.is-modern .scroll::-webkit-scrollbar-thumb,
+.is-modern .viewer__scroll::-webkit-scrollbar-thumb { background: #d4d4d8; border: 2px solid transparent; border-radius: 10px; background-clip: padding-box; }
+
+/* Without the icon column the content sits centered between equal gutters. */
+.is-modern .desktop { grid-template-columns: minmax(56px, 1fr) minmax(0, 1200px) minmax(56px, 1fr); }
+
+.is-modern .window { border-radius: var(--r); box-shadow: var(--soft); overflow: clip; }
+
+/* No file-path headers in modern mode: window title bars go away entirely, and the popups keep their
+   bar only for the close button, with the path title kept for screen readers (it names the dialog). */
+.is-modern .window > .titlebar { display: none; }
+.is-modern .viewer__bar .titlebar__title > span,
+.is-modern .lightbox__bar .titlebar__title > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.is-modern .viewer__bar, .is-modern .lightbox__bar { border-bottom: 0; }
+
+.is-modern .titlebar {
+  height: 40px;
+  padding: 0 16px;
+  background: var(--surface);
+}
+.is-modern .titlebar__title > span {
+  padding: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.is-modern .well { border-radius: var(--r-sm); }
+
+/* ---------- Buttons ---------- */
+
+.is-modern .btn,
+.is-modern .btn:hover,
+.is-modern .btn:active { transform: none; box-shadow: none; }
+
+.is-modern .btn--pink, .is-modern .btn--yellow, .is-modern .btn--light {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--r-sm);
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 120ms ease;
+}
+/* The first hero button is the primary action. */
+.is-modern .btn--yellow { background: var(--ink); border-color: var(--ink); color: #fff; }
+.is-modern .btn--yellow:hover { background: #27272a; color: #fff; }
+.is-modern .btn--pink, .is-modern .btn--light { background: #fff; color: var(--ink); }
+.is-modern .btn--pink:hover, .is-modern .btn--light:hover { background: #f4f4f5; }
+
+/* ---------- Hero ---------- */
+
+.is-modern .bio { padding: 48px 52px 52px; gap: 20px; }
+.is-modern .bio__title {
+  font-size: 64px;
+  line-height: 1.02;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+.is-modern .bio__title span { color: var(--muted); font-style: italic; }
+.is-modern .bio__lede { font-size: 20px; line-height: 1.55; max-width: 580px; }
+
+/* Side by side (1024px and up), the bio and Logan Info windows match heights, and the bio's content
+   centers in whatever extra height it gets. */
+@media (min-width: 1024px) {
+  .is-modern .hero { align-items: stretch; }
+  .is-modern .window--info { flex-grow: 1; }
+  .is-modern .window--bio { display: flex; flex-direction: column; }
+  .is-modern .bio { flex-grow: 1; justify-content: center; }
+}
+
+.is-modern .info { padding: 24px; }
+.is-modern .info__photo { border-radius: 50%; }
+.is-modern .info__name h2 { font-size: 26px; line-height: 1.15; font-weight: 500; letter-spacing: -0.01em; }
+.is-modern .badge { padding: 3px 10px; border-radius: 999px; font-size: 13px; font-style: italic; color: var(--body); }
+
+/* Tabs become an underlined segment. */
+.is-modern .info__tabs { gap: 20px; }
+.is-modern .infotab,
+.is-modern .infotab:hover {
+  height: 36px;
+  padding: 0;
+  margin: 0 0 -1px;
+  background: none;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.is-modern .infotab:hover { color: var(--ink); }
+.is-modern .infotab[aria-pressed="true"],
+.is-modern .infotab[aria-pressed="true"]:hover { background: none; color: var(--ink); border-bottom-color: var(--ink); }
+
+.is-modern dl.info__panel { padding: 2px 16px; font-size: 16px; line-height: 1.4; }
+.is-modern dl.info__panel dt { font-size: 13px; font-style: italic; color: var(--muted); }
+.is-modern dl.info__panel dt, .is-modern dl.info__panel dd { border-bottom-style: solid; }
+
+.is-modern .linkbtn { border-radius: var(--r-sm); font-size: 15px; font-weight: 500; }
+.is-modern .linkbtn:hover { background: #f4f4f5; }
+.is-modern .linkbtn--yellow { background: var(--ink); border-color: var(--ink); color: #fff; }
+.is-modern .linkbtn--yellow:hover { background: #27272a; }
+
+/* Mode-switch tip ("Go retro"): a plain card; of its title bar only the × stays, in the top-right corner. */
+.is-modern .promo { position: relative; }
+.is-modern .promo > .titlebar {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: auto;
+  padding: 0;
+  background: none;
+  border: 0;
+}
+.is-modern .promo > .titlebar > :not(.promo__x) { display: none; }
+.is-modern .promo__x { width: 28px; height: 28px; border-color: transparent; border-radius: 8px; font-size: 18px; color: var(--muted); }
+.is-modern .promo__x:hover { background: #f4f4f5; color: var(--ink); }
+.is-modern .promo__body { grid-template-columns: 1fr; padding: 20px; gap: 14px; }
+.is-modern .promo__body svg { display: none; } /* the pixel sparkle is retro-only */
+.is-modern .promo__body p { padding-right: 28px; font-size: 16px; line-height: 1.45; } /* clears the × */
+.is-modern .promo__btn { height: 40px; font-size: 15px; }
+
+/* ---------- Works ---------- */
+
+.is-modern .works__head { padding: 20px 24px; background: var(--surface); }
+.is-modern .works__head h2 { font-size: 34px; line-height: 1.15; font-weight: 500; letter-spacing: -0.015em; }
+
+.is-modern .works__filters { gap: 8px; }
+.is-modern .filter {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.is-modern .filter:hover { background: #f4f4f5; }
+.is-modern .filter[aria-pressed="true"] { box-shadow: none; transform: none; }
+.is-modern .filter__n { opacity: 0.6; }
+
+.is-modern .card {
+  border-radius: var(--r);
+  box-shadow: var(--soft);
+  overflow: clip;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.is-modern .card:hover { transform: translateY(-3px); box-shadow: var(--lift); }
+/* The file-name bar (05_Vanguard.sys) is retro flavor; modern cards open straight on the image. */
+.is-modern .card__bar { display: none; }
+.is-modern .card__body { padding: 18px 20px 20px; }
+.is-modern .card__body h3 { font-size: 22px; line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; }
+.is-modern .card__body p { font-size: 16px; line-height: 1.5; }
+.is-modern .card__foot { border-top-style: solid; border-top-width: 1px; border-top-color: var(--line); }
+.is-modern .card__tags { font-size: 14px; font-style: italic; color: var(--muted); }
+.is-modern .openbtn {
+  height: 34px;
+  padding: 0 12px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.is-modern .openbtn:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ---------- Taskbar ---------- */
+
+.is-modern .taskbar { height: 52px; font-size: 14px; }
+.is-modern .taskbtn, .is-modern .clock { border-radius: 8px; font-weight: 500; }
+.is-modern .taskbtn--active { background: #f4f4f5; }
+.is-modern .taskbar__email { color: var(--body); }
+
+/* ---------- Theme toggle (its retro style is in styles.css) ---------- */
+
+.is-modern .theme-toggle {
+  background: var(--ink);
+  border-color: var(--ink);
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+}
+.is-modern .theme-toggle:hover { background: #27272a; }
+
+.is-modern .toast { border-radius: var(--r-sm); background: var(--ink); border-color: var(--ink); color: #fff; box-shadow: var(--lift); font-size: 15px; }
+
+/* ---------- Case study viewer ---------- */
+
+.is-modern .viewer::backdrop { background: rgba(10, 10, 10, 0.4); backdrop-filter: blur(4px); }
+.is-modern .viewer__window { border-radius: 16px; box-shadow: 0 24px 64px rgba(10, 10, 10, 0.25); overflow: clip; }
+@media (prefers-reduced-motion: no-preference) {
+  .is-modern .viewer[open] .viewer__window,
+  .is-modern .lightbox[open] .lightbox__window { animation: window-open 180ms ease-out both; }
+}
+.is-modern .viewer__bar { height: 48px; }
+.is-modern .viewer__x { border-radius: 8px; font-size: 18px; }
+.is-modern .viewer__x:hover { background: #f4f4f5; color: var(--ink); }
+.is-modern .viewer__status { font-size: 14px; color: var(--muted); }
+.is-modern .viewer__meta { font-style: italic; }
+.is-modern .viewer__btn {
+  border-radius: var(--r-sm);
+  font-size: 15px;
+  font-weight: 500;
+}
+.is-modern .viewer__btn:hover { background: #f4f4f5; }
+.is-modern .viewer__btn--yellow { background: var(--ink); border-color: var(--ink); color: #fff; }
+.is-modern .viewer__btn--yellow:hover { background: #27272a; color: #fff; }
+
+.is-modern .cs { font-size: 18px; line-height: 1.6; gap: 24px; }
+
+/* Section windows become plain cards with ordinary headings. */
+.is-modern .cs > section { padding: 28px; border-radius: var(--r); box-shadow: var(--soft); }
+.is-modern .cs > section > h2,
+.is-modern .cs .case-section__header h2 {
+  height: auto;
+  display: block;
+  margin: 0 0 14px;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  white-space: normal;
+}
+.is-modern .cs > section > h2::before, .is-modern .cs > section > h2::after,
+.is-modern .cs .case-section__header h2::before, .is-modern .cs .case-section__header h2::after,
+.is-modern .cs > .case-study-hero::before { display: none; }
+.is-modern .cs .case-section__header { margin: 0; }
+.is-modern .cs .case-section__header > :not(h2) { margin-left: 0; margin-right: 0; }
+
+.is-modern .cs .case-study-eyebrow {
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.is-modern .cs h1.case-study-title { font-size: 46px; line-height: 1.05; font-weight: 500; letter-spacing: -0.02em; }
+.is-modern .cs .case-study-lede { font-size: 20px; line-height: 1.55; }
+.is-modern .cs .case-study-meta { padding: 12px 16px; border-radius: var(--r-sm); background: var(--well); font-size: 16px; line-height: 1.6; }
+.is-modern .cs .case-study-meta li::before { content: "– "; }
+.is-modern .cs h3 { font-size: 19px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.is-modern .cs .source-list li { font-size: 15px; line-height: 1.5; }
+
+.is-modern .cs .case-card,
+.is-modern .cs .muted-panel,
+.is-modern .cs .case-callout { padding: 16px 18px; border-radius: var(--r-sm); }
+.is-modern .cs img,
+.is-modern .cs iframe,
+.is-modern .cs object { border-radius: var(--r-sm); }
+.is-modern .cs figcaption, .is-modern .cs .media-caption { font-size: 15px; line-height: 1.5; font-style: italic; color: var(--muted); }
+.is-modern .cs .btn { height: 40px; padding: 0 16px; border-radius: var(--r-sm); background: var(--ink); border-color: var(--ink); color: #fff; font-size: 15px; font-weight: 500; }
+.is-modern .cs .btn:hover { background: #27272a; color: #fff; }
+
+.is-modern .cs .cs-zoom:hover img { transform: none; box-shadow: var(--lift); }
+.is-modern .cs .cs-zoom::after,
+.is-modern .cs .cs-zoom:hover::after { border: 0; border-radius: 50%; background: var(--ink); color: #fff; font-size: 18px; }
+
+/* ---------- Lightbox ---------- */
+
+.is-modern .lightbox::backdrop { background: rgba(10, 10, 10, 0.55); backdrop-filter: blur(4px); }
+.is-modern .lightbox__window { border-radius: 16px; box-shadow: 0 24px 64px rgba(10, 10, 10, 0.25); overflow: clip; }
+.is-modern .lightbox__bar { height: 48px; }
+.is-modern .lightbox__slide img { border-radius: var(--r-sm); }
+.is-modern .lightbox__count { font-size: 14px; color: var(--muted); }
+.is-modern .lightbox__caption { font-size: 17px; line-height: 1.5; font-style: italic; }
+.is-modern .lightbox__nav .viewer__btn:disabled { box-shadow: none; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1199px) {
+  .is-modern .bio { padding: 40px 40px 44px; }
+  .is-modern .bio__title { font-size: 56px; }
+}
+
+@media (max-width: 767px) {
+  .is-modern .menubar { height: 48px; }
+  .is-modern .menubar__toggle { border-radius: 8px; font-size: 16px; font-weight: 500; }
+  .is-modern .menubar__nav { border-radius: var(--r-sm); box-shadow: var(--lift); }
+
+  .is-modern .bio { padding: 28px 22px 30px; }
+  .is-modern .bio__title { font-size: 44px; }
+  .is-modern .bio__lede { font-size: 18px; }
+
+  .is-modern .works__head { padding: 18px; }
+  .is-modern .works__head h2 { font-size: 28px; }
+
+  .is-modern .cs { font-size: 17px; }
+  .is-modern .cs > section { padding: 20px 18px; }
+  .is-modern .cs h1.case-study-title { font-size: 34px; }
+  .is-modern .cs .case-study-lede { font-size: 18px; }
+}
