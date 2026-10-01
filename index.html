@@ -233,7 +233,7 @@
               <img src="assets/covers/modern/insightui.webp" alt="InsightUI app in a browser with a usability issue, a critique summary, and the Chrome extension popup" width="1600" height="1000" class="card__img card__img--photo only-modern" loading="lazy">
               <div class="card__body">
                 <h3>InsightUI: AI UX Critique</h3>
-                <p>React tool that critiques an interface with a local LLM, sorting issues by category and severity.</p>
+                <p>React tool that critiques an interface with a local LLM against Nielsen's 10 heuristics and WCAG.</p>
                 <div class="card__foot">
                   <span class="card__tags">#React #Vite #Ollama</span>
                   <a href="https://github.com/loganosc/insightui" target="_blank" rel="noopener" class="btn openbtn" data-case="insightui" aria-label="Open InsightUI: AI UX Critique">Open <span aria-hidden="true">↗</span></a>
@@ -1039,13 +1039,14 @@
             <p class="case-study-eyebrow">AI Tool · Product Design + Front-End</p>
             <h1 class="case-study-title">InsightUI: AI-Powered UX Critique</h1>
             <p class="case-study-lede">
-              A designer-first web tool that turns a screenshot, a page's code, or both into a structured UX critique from a local LLM, with every issue sorted by category, rated by severity, and paired with a concrete fix.
+              A designer-first web tool that turns a screenshot, a page's code, or both into a structured UX critique from a local LLM. It reviews the interface against Jakob Nielsen's 10 usability heuristics and WCAG accessibility, and every issue comes back sorted by category, rated by severity, tied to a heuristic, and paired with a specific fix.
             </p>
 
             <ul class="case-study-meta">
               <li>Role: Designer &amp; developer</li>
               <li>Platform: Web app + Chrome extension</li>
               <li>Tools: React 18, Vite, Ollama, Chrome Manifest V3, jsPDF</li>
+              <li>Standards: Nielsen's 10 usability heuristics, WCAG 2.1 AA</li>
             </ul>
           </div>
 
@@ -1065,11 +1066,11 @@
           </div>
           <div class="case-card">
             <h3>Goal</h3>
-            <p>Give designers critique they can work through like a checklist: grouped by UX category, ranked by severity, tied to an element on the screen, and run entirely on their own machine.</p>
+            <p>Give designers critique they can work through like a checklist: grouped by UX category, ranked by severity, grounded in an established heuristic, tied to an element on the screen, and run entirely on their own machine.</p>
           </div>
           <div class="case-card">
             <h3>Outcome</h3>
-            <p>A React app that sends inputs to a local Ollama model and returns categorized, severity-rated issues with fixes, follow-up questions, and a PDF report, plus a Chrome extension that captures any page.</p>
+            <p>A React app that returns distinct, heuristic-cited, severity-rated issues with a specific fix for each, follow-up questions, and a styled PDF report, plus a Chrome extension that captures any page. The app itself meets WCAG 2.1 AA.</p>
           </div>
         </div>
       </section>
@@ -1079,7 +1080,7 @@
         <div class="case-grid">
           <div class="case-card">
             <h3>Opportunity</h3>
-            <p>Design critiques follow a familiar rubric (usability, accessibility, hierarchy, interaction, consistency). Asking a model to answer in that exact shape makes its feedback far easier to scan, compare, and act on.</p>
+            <p>Design critiques follow a familiar rubric (usability, accessibility, hierarchy, interaction, consistency) and a shared vocabulary in Nielsen's heuristics. Asking a model to answer in that exact shape, citing the heuristic each issue breaks, makes its feedback far easier to scan, trust, and act on.</p>
           </div>
           <div class="case-card">
             <h3>Approach</h3>
@@ -1093,7 +1094,7 @@
         <div class="case-grid">
           <div class="case-card">
             <h3>Canvas + Inspector</h3>
-            <p>A split-screen layout (55% canvas, 45% inspector) that stacks on narrow windows, with a zoomable, pannable screenshot viewer and light and dark themes.</p>
+            <p>A split-screen layout (55% canvas, 45% inspector) that stacks on narrow windows, with a screenshot viewer you can zoom and pan by mouse or keyboard, and a light theme with a labeled Dark mode toggle.</p>
           </div>
           <div class="case-card">
             <h3>Flexible inputs</h3>
@@ -1101,24 +1102,52 @@
           </div>
           <div class="case-card">
             <h3>Interactive critique cards</h3>
-            <p>Expandable cards with High, Medium, and Low severity badges. Clicking one highlights its area on the screenshot and reveals the suggested fix and a follow-up question box.</p>
+            <p>Each card shows the affected element, a High, Medium, or Low severity badge, the issue, and the Nielsen heuristic it violates. Clicking one (or pressing Enter) highlights its area on the screenshot and reveals the fix and a follow-up question button.</p>
+          </div>
+          <div class="case-card">
+            <h3>Accessible by design</h3>
+            <p>Built to WCAG 2.1 AA: 4.5:1 text contrast in both themes, status never shown by color alone, full keyboard operation with a skip link and visible focus, screen-reader announcements, reflow at 200% zoom, and reduced-motion support.</p>
           </div>
           <div class="case-card">
             <h3>Reporting</h3>
-            <p>One-click PDF export with the screenshot and every issue, and a model picker that lists whatever models are installed in the user's Ollama.</p>
+            <p>A PDF report styled like the app, with Plus Jakarta Sans embedded: a severity summary, the screenshot, and every issue with its heuristic, severity, and fix. The model picker lists the user's Ollama models and hides ones that can't analyze an interface.</p>
           </div>
         </div>
       </section>
 
       <section class="case-section page-section-inner">
         <h2>Product Screens</h2>
+        <p>The canvas and inspector before an analysis, with a fashion landing page as the test interface.</p>
         <div class="case-grid">
           <figure class="case-figure">
-            <img src="assets/insightui/empty-state.webp" width="1600" height="953" alt="InsightUI in dark mode before an analysis: a screenshot drop zone and HTML, CSS, and DOM input fields on the left, an empty Critique panel listing the five categories on the right, and a model picker in the top bar">
-            <figcaption>Ready to analyze: the canvas and inputs on the left, the critique inspector waiting on the right, and the local Ollama model picker up top.</figcaption>
+            <img src="assets/insightui/empty-light.webp" width="1600" height="954" alt="InsightUI before an analysis: a Drop a UI screenshot zone on the left and an empty Critique panel listing the five categories on the right, with Ollama connected and the qwen2.5vl model selected" loading="lazy">
+            <figcaption>1. Ready to analyze: drop a screenshot or paste code, with Ollama connected and a vision model selected.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/insightui/screenshot-loaded.webp" width="1600" height="956" alt="InsightUI with a fashion landing page screenshot loaded on the canvas, the gemma4 model selected, zoom controls at 100%, and the Analyze interface button" loading="lazy">
+            <figcaption>2. Screenshot loaded: the canvas zooms and pans, and analysis starts only when you click Analyze interface.</figcaption>
+          </figure>
+          <figure class="case-figure">
+            <img src="assets/insightui/empty-state.webp" width="1600" height="953" alt="InsightUI in dark mode before an analysis, with the screenshot canvas and code inputs on the left and the empty critique inspector on the right" loading="lazy">
+            <figcaption>3. Dark mode: the same canvas-and-inspector layout, one labeled toggle away.</figcaption>
           </figure>
         </div>
       </section>
+
+      <section class="case-section page-section-inner">
+        <h2>Sample Report</h2>
+        <p>The exported report from analyzing the screenshot above with gemma4: 13 distinct issues (6 high, 7 medium), each with the affected element, a severity, the Nielsen heuristic it violates, and a specific fix. Accessibility issues no heuristic covers are left without one rather than forced into a category.</p>
+        <div class="pdf-embed">
+          <object data="assets/insightui/sample-report.pdf" type="application/pdf">
+            <iframe src="assets/insightui/sample-report.pdf" title="InsightUI sample UX critique report PDF"></iframe>
+          </object>
+        </div>
+        <div class="case-actions">
+          <a class="btn" href="assets/insightui/sample-report.pdf" download>Download PDF</a>
+          <a href="assets/insightui/sample-report.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+      </section>
+
 
       <section class="case-section page-section-inner">
         <h2>Key Flow</h2>
@@ -1130,7 +1159,7 @@
               <li>Drop in a screenshot, or import a snapshot captured by the Chrome extension.</li>
               <li>Optionally add HTML, CSS, DOM, and a one-line goal for the page.</li>
               <li>Click Analyze Interface. Analysis never starts automatically, so the user stays in control of slow local runs.</li>
-              <li>Work through issues by category, ask follow-ups, and export the PDF report.</li>
+              <li>Work through issues by category, each citing its heuristic, ask follow-ups, and export the PDF report.</li>
             </ul>
           </div>
           <div class="case-card">
@@ -1143,6 +1172,21 @@
               <li><strong>Consistency</strong>: design system adherence</li>
             </ul>
           </div>
+          <div class="case-card">
+            <h3>Nielsen's 10 heuristics</h3>
+            <ul class="case-list">
+              <li>Visibility of system status</li>
+              <li>Match between system and the real world</li>
+              <li>User control and freedom</li>
+              <li>Consistency and standards</li>
+              <li>Error prevention</li>
+              <li>Recognition rather than recall</li>
+              <li>Flexibility and efficiency of use</li>
+              <li>Aesthetic and minimalist design</li>
+              <li>Help users recognize, diagnose, and recover from errors</li>
+              <li>Help and documentation</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -1151,15 +1195,15 @@
         <div class="case-grid">
           <div class="case-card">
             <h3>Prompting</h3>
-            <p>Inputs go to Ollama's /api/generate with a UX-critic system prompt and JSON output mode. Screenshots are sent as images, so a vision-capable model reads the actual layout.</p>
+            <p>Inputs go to Ollama's /api/generate with a system prompt that lists all 10 heuristics and tells the model to keep issues distinct, give issue-specific fixes, and leave a category empty rather than pad it. Screenshots are scaled to 1280px so a Retina capture doesn't eat the context window.</p>
           </div>
           <div class="case-card">
             <h3>Structured output</h3>
-            <p>Every issue comes back as a one-sentence issue, the affected element, an actionable fix, and a severity, grouped under the five categories.</p>
+            <p>The request's format is a JSON schema (Ollama structured outputs), so every issue must include an issue, element, heuristic, fix, and severity, and the heuristic and severity must be allowed values.</p>
           </div>
           <div class="case-card">
-            <h3>Normalization</h3>
-            <p>Local models drift, so responses are cleaned up: alternate keys like a11y, recommendation, or priority map onto the schema, and plain-text replies are split into issues and sorted into categories.</p>
+            <h3>Cleanup, not padding</h3>
+            <p>Alternate keys like a11y or priority map onto the schema, heuristics given as "H4" map to full names, and repeated or near-duplicate issues are dropped, even across categories. Nothing is invented: if no usable issues come back, the app shows an error instead of placeholder content.</p>
           </div>
         </div>
       </section>
@@ -1183,19 +1227,19 @@
         <div class="case-grid">
           <div class="case-card">
             <h3>Tech stack</h3>
-            <p>React 18 + Vite 4, plain CSS with no UI framework, Axios for the Ollama API, and jsPDF + html2canvas for reports.</p>
+            <p>React 18 + Vite 4, plain CSS with shared design tokens across the app and the PDF, Axios for the Ollama API, and jsPDF with embedded Plus Jakarta Sans for reports.</p>
           </div>
           <div class="case-card">
             <h3>Architecture</h3>
-            <p>Components for Canvas, InterfaceInput, Inspector, CritiqueCard, TopBar, and BottomBar, with utilities for the Ollama client, PDF export, and highlight regions.</p>
+            <p>Components for Canvas, InterfaceInput, Inspector, CritiqueCard, TopBar, and BottomBar, with utilities for the Ollama client (schema, normalization, de-duplication), the heuristics, PDF export, and highlight regions.</p>
           </div>
           <div class="case-card">
             <h3>Local and private</h3>
             <p>Everything runs against the user's own Ollama server, configurable through .env.local, so screenshots and code never leave their machine.</p>
           </div>
           <div class="case-card">
-            <h3>Prompt limits</h3>
-            <p>Each HTML, CSS, DOM, and description section is capped at 20,000 characters to keep prompts within reach of smaller local models.</p>
+            <h3>Model-aware</h3>
+            <p>The picker checks each model's capabilities, marks text-only models, and hides image generators. Inputs are capped at 20,000 characters per section, and the context window is configurable for large pages.</p>
           </div>
           <div class="case-card">
             <h3>Honest highlighting</h3>
