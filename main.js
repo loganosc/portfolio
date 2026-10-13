@@ -145,6 +145,7 @@
       viewerBar.style.setProperty('--tb', getComputedStyle(card).getPropertyValue('--bar'));
       viewerTitle.textContent = 'C:\\Logan\\Interactive_Works\\' + bar[0].textContent;
       viewerMeta.textContent = bar[1].textContent + ' · ' + CATEGORY[card.dataset.cat] + ' · Esc to close';
+      viewerPage.hidden = false;
       viewerPage.href = link.href;
       viewerPage.textContent = (host ? 'View on ' + host : 'Open as page') + ' ↗';
       viewerBody.replaceChildren(tpl.content.cloneNode(true));
@@ -161,8 +162,7 @@
     viewerBar.style.setProperty('--tb', 'var(--yellow)');
     viewerTitle.textContent = 'C:\\Logan\\About_Me.txt';
     viewerMeta.textContent = 'About · Esc to close';
-    viewerPage.href = 'assets/Logan_Oscher_Resume.pdf';
-    viewerPage.textContent = 'Resume.pdf ↗';
+    viewerPage.hidden = true;
     viewerBody.replaceChildren(document.getElementById('cs-about').content.cloneNode(true));
     viewer.showModal();
     viewerScroll.scrollTop = 0;

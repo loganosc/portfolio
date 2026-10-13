@@ -888,6 +888,7 @@ dl.info__panel dt:nth-last-of-type(1), dl.info__panel dd:last-of-type { border-b
 }
 .viewer__btn--yellow { background: var(--yellow); }
 .viewer__btn:hover { color: var(--ink); }
+.viewer__btn[hidden] { display: none; }
 
 /* ---------- Case study content (markup from the root *-case-study.html pages) ---------- */
 
